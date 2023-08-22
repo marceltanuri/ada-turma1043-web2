@@ -1,4 +1,4 @@
-# ada-web2-1042-projeto
+# ada-turma1043-web2-projeto
 
 Implementar uma API RESTful para receber pedidos de compras. Devem ser criadas as entidades: 
 - Usuário, Endereço, Produto, Pedido, ItemPedido.
