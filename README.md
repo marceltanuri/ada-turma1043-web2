@@ -16,3 +16,9 @@ Deve ser disponibilizado as seguintes funcionalidades:
 - Enviar um email para o responsável do departamento de vendas
 - Os dados devem ser armazenados em um banco de dados Postgres
 - A API deve ter pelo menos a autenticação básica.
+
+---
+
+# Instalação do ambiente
+
+- Para subir o banco de dados execute o comando ```docker-compose up -d```
