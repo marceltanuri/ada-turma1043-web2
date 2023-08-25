@@ -16,6 +16,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.UUID)
     String id;
 
+    String name;
     String description;
     ProductCategory category;
     Integer quantityInStock;

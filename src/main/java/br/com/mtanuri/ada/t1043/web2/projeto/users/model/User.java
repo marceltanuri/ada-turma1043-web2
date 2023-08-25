@@ -2,10 +2,7 @@ package br.com.mtanuri.ada.t1043.web2.projeto.users.model;
 
 import br.com.mtanuri.ada.t1043.web2.projeto.attachments.model.Attachments;
 import br.com.mtanuri.ada.t1043.web2.projeto.orders.model.Order;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -19,8 +16,12 @@ public class User {
     String name;
     String cpf;
     String email;
+    @OneToOne
     Address address;
+    @OneToMany
     List<Order> orders;
+    @OneToMany
     LocalDateTime createdAt;
+    @OneToOne
     Attachments profileImage;
 }
