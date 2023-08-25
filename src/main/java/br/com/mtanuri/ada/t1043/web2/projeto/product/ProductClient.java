@@ -9,4 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface ProductClient {
     @GetMapping("/search")
     ProductListDto getProductList(@RequestParam("q") String query);
+
+
 }
