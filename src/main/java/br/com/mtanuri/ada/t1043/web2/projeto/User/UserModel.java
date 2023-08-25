@@ -1,10 +1,10 @@
 package br.com.mtanuri.ada.t1043.web2.projeto.User;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
+
 import java.time.LocalDate;
+import java.util.UUID;
 
 
 @Entity
@@ -12,22 +12,15 @@ import java.time.LocalDate;
 @Table(name = "user_registration")
 public class UserModel {
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     private String email;
+    @Column(nullable = false)
     private String password;
     private String cpf;
     private String address;
     private LocalDate birthday;
 
-
-    public UserModel(String email, String password, String cpf, String address, LocalDate birthday){
-        this.email = email;
-        this.password = password;
-        this.cpf = cpf;
-        this.address = address;
-        this.birthday = birthday;
-
-    }
 
     public UserModel() {
     }
