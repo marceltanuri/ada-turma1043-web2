@@ -1,20 +1,13 @@
 package br.com.mtanuri.ada.t1043.web2.projeto.config;
 
-import br.com.mtanuri.ada.t1043.web2.projeto.dto.OrderDTO;
-import br.com.mtanuri.ada.t1043.web2.projeto.entity.Order;
-import br.com.mtanuri.ada.t1043.web2.projeto.entity.OrderItem;
-import br.com.mtanuri.ada.t1043.web2.projeto.entity.Product;
-import br.com.mtanuri.ada.t1043.web2.projeto.entity.User;
-import br.com.mtanuri.ada.t1043.web2.projeto.respository.OrderItemRepository;
-import br.com.mtanuri.ada.t1043.web2.projeto.respository.OrderRepository;
-import br.com.mtanuri.ada.t1043.web2.projeto.respository.ProductRepository;
-import br.com.mtanuri.ada.t1043.web2.projeto.respository.UserRepository;
+import br.com.mtanuri.ada.t1043.web2.projeto.entity.*;
+import br.com.mtanuri.ada.t1043.web2.projeto.respository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class AppConfig implements CommandLineRunner {
+public class PopDB implements CommandLineRunner {
 
     @Autowired
     private OrderRepository orderRepository;
@@ -24,9 +17,19 @@ public class AppConfig implements CommandLineRunner {
     private ProductRepository productRepository;
     @Autowired
     private OrderItemRepository orderItemRepository;
+    @Autowired
+    private RoleRepository roleRepository;
 
     @Override
     public void run(String... args) throws Exception {
+
+        Role role1 = new Role("ROLE_ADMIN");
+        Role role2 = new Role("ROLE_USER");
+
+        this.roleRepository.save(role1);
+        this.roleRepository.save(role2);
+
+        /*
         User user = new User("1", "2", "3", null);
         Product product = new Product("", "", 4.0);
         OrderItem orderItem = new OrderItem(product, 2);
@@ -36,5 +39,6 @@ public class AppConfig implements CommandLineRunner {
         this.userRepository.save(user);
         this.productRepository.save(product);
         this.orderRepository.save(order);
+        */
     }
 }

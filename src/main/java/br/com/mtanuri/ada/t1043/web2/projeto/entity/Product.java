@@ -2,15 +2,13 @@ package br.com.mtanuri.ada.t1043.web2.projeto.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "tb_product")
 @AllArgsConstructor
 @NoArgsConstructor

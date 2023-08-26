@@ -17,4 +17,9 @@ public class ProductServiceImpl implements ProductService {
         Product product = new Product(productDTO.getName(), productDTO.getDescription(), productDTO.getPrice());
         return this.productRepository.save(product);
     }
+
+    @Override
+    public Product getProductById(String productId) {
+        return this.productRepository.findById(productId).get();
+    }
 }
