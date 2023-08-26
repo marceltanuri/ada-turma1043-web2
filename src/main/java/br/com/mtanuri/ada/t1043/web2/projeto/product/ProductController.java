@@ -37,22 +37,22 @@ public class ProductController {
         return this.productService.find(product);
     }
 
-    @GetMapping(value = "/test")
-    @Operation(summary = "Test", description = "Test")
-    @ApiResponse(
-            responseCode = "200",
-            description = "OK"
-    )
-    @ApiResponse(
-            responseCode = "400",
-            description = "Bad Request",
-            content = @Content(schema = @Schema(implementation = ProductExceptionDto.class))
-    )
-    public void test() {
-        var searchProduct = new Product();
-        searchProduct.setId(40L);
-        var product = this.productService.find(searchProduct).orElseThrow(RuntimeException::new);
-
-        this.productService.reduceStock(product);
-    }
+//    @GetMapping(value = "/test")
+//    @Operation(summary = "Test", description = "Test")
+//    @ApiResponse(
+//            responseCode = "200",
+//            description = "OK"
+//    )
+//    @ApiResponse(
+//            responseCode = "400",
+//            description = "Bad Request",
+//            content = @Content(schema = @Schema(implementation = ProductExceptionDto.class))
+//    )
+//    public void test() {
+//        var searchProduct = new Product();
+//        searchProduct.setId(40L);
+//        var product = this.productService.find(searchProduct).orElseThrow(RuntimeException::new);
+//
+//        this.productService.reduceStock(product);
+//    }
 }

@@ -19,7 +19,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User find(Long userId) {
+        return this.userRepository.findById(userId).orElseThrow(RuntimeException::new);
+    }
+
+    @Override
     public User save(User user) {
         return this.userRepository.save(user);
+    }
+
+    @Override
+    public User delete(User user) {
+        this.userRepository.delete(user);
+        return user;
     }
 }

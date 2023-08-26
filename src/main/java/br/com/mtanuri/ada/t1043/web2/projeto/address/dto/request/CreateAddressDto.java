@@ -1,4 +1,4 @@
-package br.com.mtanuri.ada.t1043.web2.projeto.user.dto.request;
+package br.com.mtanuri.ada.t1043.web2.projeto.address.dto.request;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
